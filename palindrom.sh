@@ -1,0 +1,16 @@
+read -p "Enter a number: " num
+temp=$num
+rev=0
+
+while [ $num -gt 0 ]
+do
+    digit=$((num % 10))
+    rev=$((rev * 10 + digit))
+    num=$((num / 10))
+done
+
+if [ $rev -eq $temp ]; then
+    echo "$temp is a palindrome number."
+else
+    echo "$temp is NOT a palindrome number."
+fi
